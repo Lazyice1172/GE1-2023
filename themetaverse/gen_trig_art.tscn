@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://qq2dog86ycfu"]
+
+[ext_resource type="Script" path="res://circles_of_thing.gd" id="1_k1eeb"]
+[ext_resource type="PackedScene" uid="uid://6x84ht734luo" path="res://dod.tscn" id="2_nyoi0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hsep8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xndgb"]
+
+[node name="root" type="Node3D"]
+script = ExtResource("1_k1eeb")
+dodScene = ExtResource("2_nyoi0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_hsep8")
+surface_material_override/0 = SubResource("StandardMaterial3D_xndgb")
